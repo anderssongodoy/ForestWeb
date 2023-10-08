@@ -18,6 +18,8 @@ export const Identifica = () => {
     });
 
     const [activeMarker, setActiveMarker] = useState(null);
+    const [showInfo, setShowInfo] = useState(false); // Estado para la sección superpuesta
+    const [showBottomSection, setShowBottomSection] = useState(false); // Estado para la sección debajo del mapa
     const [fireData, setFireData] = useState([]);
     const [videosData, setVideosData] = useState([]);
 
@@ -62,9 +64,15 @@ export const Identifica = () => {
 
     const handleActiveMarker = (marker) => {
         if (marker === activeMarker) {
-            return;
+            // Si se hace clic en el mismo marcador, oculta la sección superpuesta y la sección debajo del mapa
+            setShowInfo(false);
+            setShowBottomSection(false);
+        } else {
+            // Muestra la sección superpuesta y la sección debajo del mapa, y establece el marcador activo
+            setShowInfo(true);
+            setShowBottomSection(true);
+            setActiveMarker(marker);
         }
-        setActiveMarker(marker);
     };
 
     return (
@@ -80,13 +88,13 @@ export const Identifica = () => {
                     </div>
                     <div className="cursor-pointer">
                         <div className="text-center items-center flex justify-center">
-                        <BsFire />
+                            <BsFire />
                         </div>
                         <div className="text-sm">Alerta</div>
                     </div>
                     <div className="cursor-pointer">
                         <div className="text-center items-center flex justify-center">
-                        <AiFillAlert />
+                            <AiFillAlert />
                         </div>
                         <div className="text-sm">Reporta</div>
                     </div>
@@ -94,13 +102,17 @@ export const Identifica = () => {
             </div>
 
             {/* Mapa en el centro */}
-            <div className="w-3/4">
+            <div className="w-3/4 relative">
                 <div className="">
                     {isLoaded ? (
                         <GoogleMap
                             center={{ lat: -16.35807, lng: -71.65679 }}
                             zoom={10}
-                            onClick={() => setActiveMarker(null)}
+                            onClick={() => {
+                                setShowInfo(false);
+                                setShowBottomSection(false);
+                                setActiveMarker(null);
+                            }}
                             mapContainerStyle={{ width: "100%", height: "100vh" }}
                             mapContainerClassName=""
                             options={{
@@ -121,7 +133,7 @@ export const Identifica = () => {
                                     icon={getCategoryIcon(event.categories[0].title)}
                                 >
                                     {activeMarker === event ? (
-                                        <InfoWindowF onCloseClick={() => setActiveMarker(null)}>
+                                        <InfoWindowF onCloseClick={() => handleActiveMarker(null)}>
                                             <div>
                                                 <p>Evento: {event.title}</p>
                                                 <p>Categoría: {event.categories[0].title}</p>
@@ -133,6 +145,22 @@ export const Identifica = () => {
                         </GoogleMap>
                     ) : null}
                 </div>
+
+                {/* Sección superpuesta */}
+                {showInfo && (
+                    <div className="absolute top-0 right-0 bg-white p-4">
+                        {/* Contenido de la sección superpuesta */}
+                        <h2>Contenido Superpuesto</h2>
+                    </div>
+                )}
+
+                {/* Sección debajo del mapa */}
+                {showBottomSection && (
+                    <div className="bg-white p-4">
+                        {/* Contenido de la sección debajo del mapa */}
+                        <h2>Contenido Debajo del Mapa</h2>
+                    </div>
+                )}
             </div>
 
             {/* Sección de videos a la derecha */}
