@@ -1,13 +1,16 @@
+import React, { useState, useEffect } from "react";
 import { GoogleMap, InfoWindowF, MarkerF, useLoadScript } from "@react-google-maps/api";
-import { Fragment, useState, useEffect } from "react";
 import iconVolcan from '../assets/img/volcanous.png'
 import iconInun from '../assets/img/floods.png'
 import iconInce from '../assets/img/wildfires.png'
 import { GoAlertFill } from "react-icons/go"
 import { BsFire } from "react-icons/bs"
 import { AiFillAlert } from "react-icons/ai"
-import ReactPlayer from "react-player";
-import video1 from '../assets/video/5muertos.mp4'
+import ReactPlayer from 'react-player';
+import video1 from '../assets/video/5muertos.mp4';
+import video2 from '../assets/video/IncendioArequipa.mp4';
+import video3 from '../assets/video/incendioPiura.mp4'
+import video4 from '../assets/video/indeciIncendio.mp4'
 
 export const Identifica = () => {
     const { isLoaded } = useLoadScript({
@@ -16,7 +19,6 @@ export const Identifica = () => {
 
     const [activeMarker, setActiveMarker] = useState(null);
     const [fireData, setFireData] = useState([]);
-    const [naturalEvents, setNaturalEvents] = useState([]);
     const [videosData, setVideosData] = useState([]);
 
     const getCategoryIcon = (categoryTitle) => {
@@ -31,26 +33,31 @@ export const Identifica = () => {
     };
 
     useEffect(() => {
+        // Obtener datos de eventos naturales desde la API de EONET
         fetch('https://eonet.gsfc.nasa.gov/api/v2.1/events')
             .then((response) => response.json())
             .then((data) => {
+                // Filtrar eventos con coordenadas válidas
                 const eventsWithGeometry = data.events.filter((event) => {
                     return event.geometries.length > 0 && event.geometries[0].type === "Point";
                 });
 
-                setNaturalEvents(eventsWithGeometry);
+                setFireData(eventsWithGeometry);
             })
             .catch((error) => {
                 console.error('Error fetching natural events data:', error);
             });
 
-        const fetchedVideos = [
-            { title: "Video 1", filename: "/src/assets/video/5muertos.mp4" },
-            { title: "Video 2", filename: "../assets/video/IncendioArequipa.mp4" },
+        // Cargar datos de tus videos descargados aquí
+        const videoData = [
+            { title: "Video 1", url: video1 },
+            { title: "Video 2", url: video2 },
+            { title: "Video 3", url: video3 },
+            { title: "Video 4", url: video4 },
+            // Agregar más videos si es necesario
         ];
 
-        setVideosData(fetchedVideos);
-        console.log(video1)
+        setVideosData(videoData);
     }, []);
 
     const handleActiveMarker = (marker) => {
@@ -72,58 +79,64 @@ export const Identifica = () => {
                         <div className="text-sm">Desastres</div>
                     </div>
                     <div className="cursor-pointer">
+                        <div className="text-center items-center flex justify-center">
                         <BsFire />
+                        </div>
+                        <div className="text-sm">Alerta</div>
                     </div>
                     <div className="cursor-pointer">
+                        <div className="text-center items-center flex justify-center">
                         <AiFillAlert />
+                        </div>
+                        <div className="text-sm">Reporta</div>
                     </div>
                 </div>
             </div>
 
+            {/* Mapa en el centro */}
             <div className="w-3/4">
-                <Fragment>
-                    <div className="">
-                        {isLoaded ? (
-                            <GoogleMap
-                                center={{ lat: -16.35807, lng: -71.65679 }}
-                                zoom={10}
-                                onClick={() => setActiveMarker(null)}
-                                mapContainerStyle={{ width: "100%", height: "100vh" }}
-                                mapContainerClassName=""
-                                options={{
-                                    mapTypeControl: false,
-                                    streetViewControl: false,
-                                    fullscreenControl: false,
-                                    mapTypeId: 'hybrid',
-                                }}
-                            >
-                                {naturalEvents.map((event) => (
-                                    <MarkerF
-                                        key={event.id}
-                                        position={{
-                                            lat: event.geometries[0].coordinates[1],
-                                            lng: event.geometries[0].coordinates[0],
-                                        }}
-                                        onClick={() => handleActiveMarker(event)}
-                                        icon={getCategoryIcon(event.categories[0].title)}
-                                    >
-                                        {activeMarker === event ? (
-                                            <InfoWindowF onCloseClick={() => setActiveMarker(null)}>
-                                                <div>
-                                                    <p>Evento: {event.title}</p>
-                                                    <p>Categoría: {event.categories[0].title}</p>
-                                                </div>
-                                            </InfoWindowF>
-                                        ) : null}
-                                    </MarkerF>
-                                ))}
-                            </GoogleMap>
-                        ) : null}
-                    </div>
-                </Fragment>
+                <div className="">
+                    {isLoaded ? (
+                        <GoogleMap
+                            center={{ lat: -16.35807, lng: -71.65679 }}
+                            zoom={10}
+                            onClick={() => setActiveMarker(null)}
+                            mapContainerStyle={{ width: "100%", height: "100vh" }}
+                            mapContainerClassName=""
+                            options={{
+                                mapTypeControl: false,
+                                streetViewControl: false,
+                                fullscreenControl: false,
+                                mapTypeId: 'hybrid',
+                            }}
+                        >
+                            {fireData.map((event) => (
+                                <MarkerF
+                                    key={event.id}
+                                    position={{
+                                        lat: event.geometries[0].coordinates[1],
+                                        lng: event.geometries[0].coordinates[0],
+                                    }}
+                                    onClick={() => handleActiveMarker(event)}
+                                    icon={getCategoryIcon(event.categories[0].title)}
+                                >
+                                    {activeMarker === event ? (
+                                        <InfoWindowF onCloseClick={() => setActiveMarker(null)}>
+                                            <div>
+                                                <p>Evento: {event.title}</p>
+                                                <p>Categoría: {event.categories[0].title}</p>
+                                            </div>
+                                        </InfoWindowF>
+                                    ) : null}
+                                </MarkerF>
+                            ))}
+                        </GoogleMap>
+                    ) : null}
+                </div>
             </div>
 
-            <div className="w-1/4 bg-black p-4 text-white">
+            {/* Sección de videos a la derecha */}
+            <div className="w-1/4 bg-black p-4 text-white" style={{ maxHeight: "100vh", overflowY: "auto" }}>
                 <h2 className="text-xl font-bold mb-4">Sección de Videos</h2>
                 <div className="video-list">
                     {videosData.map((video, index) => (
