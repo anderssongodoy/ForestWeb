@@ -125,10 +125,6 @@ export const Identifica = () => {
 
             <div className="w-1/4 bg-black p-4 text-white">
                 <h2 className="text-xl font-bold mb-4">Sección de Videos</h2>
-                <ReactPlayer
-                    url={video1}
-                    controls
-                />
                 <div className="video-list">
                     {videosData.map((video, index) => (
                         <div className="video-item" key={index}>
