@@ -43,22 +43,12 @@ export const Identifica = () => {
                 return iconInun;
             case "Wildfires":
                 return iconInce;
+            case "incendio forestal":
+                return iconInce;
         }
     };
 
     useEffect(() => {
-        fetch('https://eonet.gsfc.nasa.gov/api/v2.1/events')
-            .then((response) => response.json())
-            .then((data) => {
-                const eventsWithGeometry = data.events.filter((event) => {
-                    return event.geometries.length > 0 && event.geometries[0].type === "Point";
-                });
-
-                setFireData(eventsWithGeometry);
-            })
-            .catch((error) => {
-                console.error('Error fetching natural events data:', error);
-            });
 
         const videoData = [
             { title: "Video 1", url: video1 },
@@ -182,26 +172,6 @@ export const Identifica = () => {
                                 mapTypeId: 'hybrid',
                             }}
                         >
-                            {fireData.map((event) => (
-                                <MarkerF
-                                    key={event.id}
-                                    position={{
-                                        lat: event.geometries[0].coordinates[1],
-                                        lng: event.geometries[0].coordinates[0],
-                                    }}
-                                    onClick={() => handleActiveMarker(event)}
-                                    icon={getCategoryIcon(event.categories[0].title)}
-                                >
-                                    {activeMarker === event ? (
-                                        <InfoWindowF onCloseClick={() => handleActiveMarker(null)}>
-                                            <div>
-                                                <p>Evento: {event.title}</p>
-                                                <p>Categoría: {event.categories[0].title}</p>
-                                            </div>
-                                        </InfoWindowF>
-                                    ) : null}
-                                </MarkerF>
-                            ))}
                             {customEventData.map((event) => (
                                 <MarkerF
                                     key={event.fecha}
