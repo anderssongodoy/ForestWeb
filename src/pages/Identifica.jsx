@@ -26,6 +26,12 @@ export const Identifica = () => {
         googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
     });
 
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
     const [activeMarker, setActiveMarker] = useState(null);
     const [showInfo, setShowInfo] = useState(false);
     const [showBottomSection, setShowBottomSection] = useState(false);
@@ -35,6 +41,8 @@ export const Identifica = () => {
     const chartRef = useRef(null);
     const [showWelcomeBox, setShowWelcomeBox] = useState(false);
     const [language, setLanguage] = useState('default');
+    const [chart, setChart] = useState(null);
+
 
     const getCategoryIcon = (categoryTitle) => {
         switch (categoryTitle) {
@@ -63,6 +71,10 @@ export const Identifica = () => {
     }, []);
 
     useEffect(() => {
+        if (chart) {
+            chart.destroy(); // Destruye el gráfico anterior
+        }
+
         if (chartRef.current) {
             const data = {
                 labels: ['2019', '2020', '2021', '2022', '2023'],
@@ -96,11 +108,12 @@ export const Identifica = () => {
             const ctx = chartRef.current.getContext('2d');
 
             if (ctx) {
-                new Chart(ctx, {
+                const newChart = new Chart(ctx, {
                     type: 'bar',
                     data: data,
                     options: options,
                 });
+                setChart(newChart); // Guarda una referencia al nuevo gráfico
             }
         }
     }, [chartRef.current]);
@@ -127,7 +140,62 @@ export const Identifica = () => {
 
     return (
         <div className="flex flex-col md:flex-row h-screen">
-            <div className="md:w-1/12 w-full bg-black text-white text-center">
+            <div className="md:hidden bg-black text-white p-4">
+                <button onClick={toggleMobileMenu}>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                </button>
+            </div>
+            <div className="hidden md:w-1/12 md:block bg-black text-white text-center">
+            <div className="text-4xl space-y-5 flex flex-col justify-center items-center mt-10">
+                    <div className="text-center cursor-pointer" onClick={handleClick}>
+                        <div className="text-center items-center flex justify-center">
+                            <FiFigma />
+                        </div>
+                        <div className="text-sm">CLICKEA</div>
+                        <div className="text-sm">PARA VER</div>
+                        <div className="text-sm">NUESTRO</div>
+                        <div className="text-sm">FIGMA</div>
+                    </div>
+                    <div className="text-center cursor-pointer">
+                        <div className="text-center items-center flex justify-center">
+                            <GoAlertFill />
+                        </div>
+                        <div className="text-sm">Desastres</div>
+                    </div>
+                    <div className="cursor-pointer">
+                        <div className="text-center items-center flex justify-center">
+                            <AiFillRedditSquare />
+                        </div>
+                        <div className="text-sm">Entrenamiento</div>
+                    </div>
+                    <div className="cursor-pointer">
+                        <div className="text-center items-center flex justify-center">
+                            <BsFire />
+                        </div>
+                        <div className="text-sm">Alerta</div>
+                    </div>
+                    <div className="cursor-pointer">
+                        <div className="text-center items-center flex justify-center">
+                            <AiFillAlert />
+                        </div>
+                        <div className="text-sm">Reporta</div>
+                    </div>
+                </div>
+            </div>
+            <div className={`md:w-1/12 w-full bg-black text-white text-center ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
                 <div className="text-4xl space-y-5 flex flex-col justify-center items-center mt-10">
                     <div className="text-center cursor-pointer" onClick={handleClick}>
                         <div className="text-center items-center flex justify-center">
@@ -205,12 +273,12 @@ export const Identifica = () => {
                                     ) : null}
                                 </MarkerF>
                             ))}
-                            <div className="fixed bottom-4 left-4 z-50 cursor-pointer">
+                            <div className="fixed bottom-4 left-16 z-50 cursor-pointer">
                                 <img src={logo} alt="Icono" className="w-40 h-50%" onClick={handleLogoClick} />
                             </div>
 
                             {showWelcomeBox && (
-                                <div className="fixed bottom-4 left-40 bg-message text-white p-4 rounded-lg shadow-lg z-50">
+                                <div className="fixed bottom-4 left-52 bg-message text-white p-4 rounded-lg shadow-lg z-50">
                                     <p>Hola! Mi nombre es Yanapay soy de [tu información]</p>
                                     <p>Acabo de configurar tu idioma por el lugar donde estás. ¿Deseas cambiarlo?</p>
                                     <button className="bg-white text-black py-2 px-4 rounded-full mt-2">
@@ -218,11 +286,11 @@ export const Identifica = () => {
                                     </button>
                                 </div>
                             )}
-                            <div className="fixed bottom-36 left-12 z-50">
+                            <div className="fixed bottom-4 left-6 z-50">
                                 <img src={reporte} alt="Icono" className="w-20 h-50%" />
                             </div>
-                            <div className="fixed bottom-52 left-12 z-50">
-                                <img src={mensaje} alt="Icono" className="w-20 h-50%" />
+                            <div className="fixed bottom-24 left-10 z-50">
+                                <img src={mensaje} alt="Icono" className="w-12 h-50%" />
                             </div>
                         </GoogleMap>
                     ) : null}
@@ -254,11 +322,11 @@ export const Identifica = () => {
                 )}
             </div>
 
-            <div className="md:w-1/4 w-full bg-black p-4 text-white" style={{ maxHeight: "100vh", overflowY: "auto" }}>
+            <div className="md:w-1/4 w-full bg-black p-4 text-white md:overflow-y-auto ">
                 <h2 className="text-xl font-bold mb-4">Sección de Videos</h2>
                 <div className="video-list">
                     {videosData.map((video, index) => (
-                        <div className="video-item" key={index}>
+                        <div className="video-item mb-4" key={index}>
                             <h3>{video.title}</h3>
                             <ReactPlayer
                                 url={video.url}
