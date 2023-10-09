@@ -215,11 +215,11 @@ export const Identifica = () => {
                     ) : null}
                 </div>
 
-                {showInfo && (
+                {/* {showInfo && (
                     <div className="absolute top-0 right-0 bg-white p-4">
                         <h2>Contenido Superpuesto</h2>
                     </div>
-                )}
+                )} */}
 
                 {showBottomSection && (
                     <div className="p-4 text-white">
