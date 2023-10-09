@@ -4,6 +4,8 @@ import iconVolcan from '../assets/img/volcanous.png'
 import iconInun from '../assets/img/floods.png'
 import iconInce from '../assets/img/wildfires.png'
 import { GoAlertFill } from "react-icons/go"
+
+import { AiFillRedditSquare } from "react-icons/ai"
 import { BsFire } from "react-icons/bs"
 import { AiFillAlert } from "react-icons/ai"
 import ReactPlayer from 'react-player';
@@ -88,6 +90,13 @@ export const Identifica = () => {
                             <GoAlertFill />
                         </div>
                         <div className="text-sm">Desastres</div>
+                    </div>
+                    
+                    <div className="cursor-pointer">
+                        <div className="text-center items-center flex justify-center">
+                            <AiFillRedditSquare />
+                        </div>
+                        <div className="text-sm">Entrenamiento</div>
                     </div>
                     <div className="cursor-pointer">
                         <div className="text-center items-center flex justify-center">
