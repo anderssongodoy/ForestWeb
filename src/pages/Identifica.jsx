@@ -8,6 +8,7 @@ import { AiFillRedditSquare } from "react-icons/ai"
 import { BsFire } from "react-icons/bs"
 import { AiFillAlert } from "react-icons/ai"
 import { FiFigma } from "react-icons/fi"
+import { AiOutlineGithub } from "react-icons/ai"
 import ReactPlayer from 'react-player';
 import video1 from '../assets/video/5muertos.mp4';
 import video2 from '../assets/video/IncendioArequipa.mp4';
@@ -121,7 +122,7 @@ export const Identifica = () => {
     };
 
     const handleClick = () => {
-        window.open("https://www.figma.com/file/6imgEKMW7KFQlh9i0cQTQf/Pyronite?type=design&node-id=135%3A1736&mode=design&t=1pj4fpslXYfr1ujb-1", '_blank')
+        window.open("https://www.figma.com/proto/6imgEKMW7KFQlh9i0cQTQf/Pyronite?type=design&node-id=171-710&t=BmaQxPo8lKpcCzuM-1&scaling=scale-down&page-id=0%3A1&mode=design", '_blank')
     }
 
     return (
