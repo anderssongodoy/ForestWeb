@@ -4,10 +4,10 @@ import iconVolcan from '../assets/img/volcanous.png'
 import iconInun from '../assets/img/floods.png'
 import iconInce from '../assets/img/wildfires.png'
 import { GoAlertFill } from "react-icons/go"
-
 import { AiFillRedditSquare } from "react-icons/ai"
 import { BsFire } from "react-icons/bs"
 import { AiFillAlert } from "react-icons/ai"
+import { FiFigma } from "react-icons/fi"
 import ReactPlayer from 'react-player';
 import video1 from '../assets/video/5muertos.mp4';
 import video2 from '../assets/video/IncendioArequipa.mp4';
@@ -120,10 +120,23 @@ export const Identifica = () => {
         setShowWelcomeBox(!showWelcomeBox);
     };
 
+    const handleClick = ()=>{
+        window.open("https://www.figma.com/file/6imgEKMW7KFQlh9i0cQTQf/Pyronite?type=design&node-id=135%3A1736&mode=design&t=1pj4fpslXYfr1ujb-1", '_blank')
+        }
+
     return (
         <div className="flex h-screen">
             <div className="w-1/12 bg-black text-white text-center">
                 <div className="text-4xl space-y-5 flex flex-col justify-center items-center mt-10">
+                    <div className="text-center cursor-pointer" onClick={handleClick}>
+                        <div className="text-center items-center flex justify-center" >
+                            <FiFigma />
+                        </div>
+                        <div className="text-sm">CLICKEA</div>
+                        <div className="text-sm">PARA VER</div>
+                        <div className="text-sm">NUESTRO</div>
+                        <div className="text-sm">FIGMA</div>
+                    </div>
                     <div className="text-center cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <GoAlertFill />
@@ -156,7 +169,7 @@ export const Identifica = () => {
                 <div className="">
                     {isLoaded ? (
                         <GoogleMap
-                            center={{ lat: -12.0259475, lng: -77.6110465 }}
+                            center={{ lat: -12.0265898, lng: -77.1529351 }}
                             zoom={10}
                             onClick={() => {
                                 setShowInfo(false);

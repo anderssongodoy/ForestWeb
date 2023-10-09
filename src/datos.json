@@ -278,5 +278,37 @@
             "latitud": -5.4024537,
             "longitud": -79.6065956
         }
+    },
+    {
+        "fecha": "17 de setiembre de 2023",
+        "hora": "20:30 horas",
+        "tipo": "incendio forestal",
+        "danios": "daños a la cobertura natural en el centro poblado de Munichis",
+        "ubicacion": {
+            "departamento": "LORETO",
+            "provincia": "ALTO AMAZONAS",
+            "distrito": "YURIMAGUAS"
+        },
+        
+        "coordenadas": {
+            "latitud": -5.895236,
+            "longitud": -76.137443
+        }
+    },
+    {
+        "fecha": "21 de junio de 2022",
+        "hora": "13:30 horas",
+        "tipo": "incendio forestal",
+        "danios": "daños a la cobertura natural (carrizales) en el sector Fundo Loreto",
+        "ubicacion": {
+            "departamento": "MOQUEGUA",
+            "provincia": "ILO",
+            "distrito": "EL ALGARROBAL"
+        },
+        
+        "coordenadas": {
+            "latitud": -17.6217311,
+            "longitud": -71.2768043
+        }
     }
 ]
