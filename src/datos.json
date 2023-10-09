@@ -262,5 +262,21 @@
             "latitud": -12.5969815,
             "longitud": -70.1078988
         }
+    },
+    {
+        "fecha": "23 de setiembre de 2023",
+        "hora": "13:30 horas",
+        "tipo": "incendio forestal",
+        "danios": "daños a la cobertura natural y cultivos en los caseríos de Cruz de Piedra y Naranjo",
+        "ubicacion": {
+            "departamento": "PIURA",
+            "provincia": "HUANCABAMBA",
+            "distrito": "SAN MIGUEL DE EL FAIQUE"
+        },
+        
+        "coordenadas": {
+            "latitud": -5.4024537,
+            "longitud": -79.6065956
+        }
     }
 ]
