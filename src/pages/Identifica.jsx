@@ -120,16 +120,16 @@ export const Identifica = () => {
         setShowWelcomeBox(!showWelcomeBox);
     };
 
-    const handleClick = ()=>{
+    const handleClick = () => {
         window.open("https://www.figma.com/file/6imgEKMW7KFQlh9i0cQTQf/Pyronite?type=design&node-id=135%3A1736&mode=design&t=1pj4fpslXYfr1ujb-1", '_blank')
-        }
+    }
 
     return (
-        <div className="flex h-screen">
-            <div className="w-1/12 bg-black text-white text-center">
+        <div className="flex flex-col md:flex-row h-screen">
+            <div className="md:w-1/12 w-full bg-black text-white text-center">
                 <div className="text-4xl space-y-5 flex flex-col justify-center items-center mt-10">
                     <div className="text-center cursor-pointer" onClick={handleClick}>
-                        <div className="text-center items-center flex justify-center" >
+                        <div className="text-center items-center flex justify-center">
                             <FiFigma />
                         </div>
                         <div className="text-sm">CLICKEA</div>
@@ -143,7 +143,6 @@ export const Identifica = () => {
                         </div>
                         <div className="text-sm">Desastres</div>
                     </div>
-
                     <div className="cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <AiFillRedditSquare />
@@ -165,7 +164,7 @@ export const Identifica = () => {
                 </div>
             </div>
 
-            <div className="w-3/4 relative">
+            <div className="md:w-3/4 relative w-full">
                 <div className="">
                     {isLoaded ? (
                         <GoogleMap
@@ -228,17 +227,11 @@ export const Identifica = () => {
                     ) : null}
                 </div>
 
-                {/* {showInfo && (
-                    <div className="absolute top-0 right-0 bg-white p-4">
-                        <h2>Contenido Superpuesto</h2>
-                    </div>
-                )} */}
-
                 {showBottomSection && (
                     <div className="p-4 text-white">
                         <div>
                             <div className="text-center text-2xl">Indice Meteorológico de Incendios (FWI)</div>
-                            <img src={indice} alt="asd" />
+                            <img src={indice} alt="asd" className="w-full" />
                         </div>
                         <div className="mt-10">
                             <div className="text-2xl">¿Sabías Qué?</div>
@@ -257,11 +250,10 @@ export const Identifica = () => {
                             </div>
                         </div>
                     </div>
-
                 )}
             </div>
 
-            <div className="w-1/4 bg-black p-4 text-white" style={{ maxHeight: "100vh", overflowY: "auto" }}>
+            <div className="md:w-1/4 w-full bg-black p-4 text-white" style={{ maxHeight: "100vh", overflowY: "auto" }}>
                 <h2 className="text-xl font-bold mb-4">Sección de Videos</h2>
                 <div className="video-list">
                     {videosData.map((video, index) => (
