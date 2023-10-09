@@ -14,6 +14,9 @@ import video2 from '../assets/video/IncendioArequipa.mp4';
 import video3 from '../assets/video/incendioPiura.mp4'
 import video4 from '../assets/video/indeciIncendio.mp4'
 import indice from '../assets/img/indicemeteorologico.png'
+import logo from '../assets/img/logo.png'
+import reporte from '../assets/img/reporte.png'
+import mensaje from '../assets/img/mensaje.png'
 import jsonData from '../datos.json';
 import Chart from 'chart.js/auto';
 
@@ -29,6 +32,8 @@ export const Identifica = () => {
     const [videosData, setVideosData] = useState([]);
     const [customEventData, setCustomEventData] = useState(jsonData);
     const chartRef = useRef(null);
+    const [showWelcomeBox, setShowWelcomeBox] = useState(false);
+    const [language, setLanguage] = useState('default');
 
     const getCategoryIcon = (categoryTitle) => {
         switch (categoryTitle) {
@@ -97,7 +102,6 @@ export const Identifica = () => {
                 },
             };
 
-            // Crear el gráfico en el elemento canvas
             const ctx = chartRef.current.getContext('2d');
 
             if (ctx) {
@@ -120,6 +124,10 @@ export const Identifica = () => {
             setShowBottomSection(true);
             setActiveMarker(marker);
         }
+    };
+
+    const handleLogoClick = () => {
+        setShowWelcomeBox(!showWelcomeBox);
     };
 
     return (
@@ -214,6 +222,25 @@ export const Identifica = () => {
                                     ) : null}
                                 </MarkerF>
                             ))}
+                            <div className="fixed bottom-4 left-4 z-50 cursor-pointer">
+                                <img src={logo} alt="Icono" className="w-40 h-50%" onClick={handleLogoClick} />
+                            </div>
+
+                            {showWelcomeBox && (
+                                <div className="fixed bottom-4 left-40 bg-message text-white p-4 rounded-lg shadow-lg z-50">
+                                    <p>Hola! Mi nombre es Yanapay soy de [tu información]</p>
+                                    <p>Acabo de configurar tu idioma por el lugar donde estás. ¿Deseas cambiarlo?</p>
+                                    <button className="bg-white text-black py-2 px-4 rounded-full mt-2">
+                                        Cambiar Idioma
+                                    </button>
+                                </div>
+                            )}
+                            <div className="fixed bottom-36 left-12 z-50">
+                                <img src={reporte} alt="Icono" className="w-20 h-50%" />
+                            </div>
+                            <div className="fixed bottom-52 left-12 z-50">
+                                <img src={mensaje} alt="Icono" className="w-20 h-50%" />
+                            </div>
                         </GoogleMap>
                     ) : null}
                 </div>
@@ -247,6 +274,7 @@ export const Identifica = () => {
                             </div>
                         </div>
                     </div>
+
                 )}
             </div>
 

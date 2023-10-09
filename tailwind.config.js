@@ -11,7 +11,8 @@ export default {
         "secondary": "#267125",
         "button": "#2F772D",
         "title": "#DEBA3B",
-        "textbutton": "#2B2B2B"
+        "textbutton": "#2B2B2B",
+        "message": "#00501C"
       }
     },
   },
