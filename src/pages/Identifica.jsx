@@ -122,7 +122,8 @@ export const Identifica = () => {
     };
 
     const handleClick = () => {
-        window.open("https://www.figma.com/proto/6imgEKMW7KFQlh9i0cQTQf/Pyronite?type=design&node-id=95-6&t=BsE14o78XeLxclGN-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=162%3A543", '_blank')
+        window.open("https://www.figma.com/proto/6imgEKMW7KFQlh9i0cQTQf/Pyronite?type=design&node-id=162-543&t=Nr2WFrZoupmlnrel-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=162%3A543&mode=design", '_blank')
+
     }
 
     return (
