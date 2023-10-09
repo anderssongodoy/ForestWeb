@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { GoogleMap, InfoWindowF, MarkerF, useLoadScript } from "@react-google-maps/api";
 import iconVolcan from '../assets/img/volcanous.png'
 import iconInun from '../assets/img/floods.png'
@@ -11,6 +11,7 @@ import video1 from '../assets/video/5muertos.mp4';
 import video2 from '../assets/video/IncendioArequipa.mp4';
 import video3 from '../assets/video/incendioPiura.mp4'
 import video4 from '../assets/video/indeciIncendio.mp4'
+import jsonData from '../datos.json';
 
 export const Identifica = () => {
     const { isLoaded } = useLoadScript({
@@ -22,6 +23,7 @@ export const Identifica = () => {
     const [showBottomSection, setShowBottomSection] = useState(false); // Estado para la sección debajo del mapa
     const [fireData, setFireData] = useState([]);
     const [videosData, setVideosData] = useState([]);
+    const [customEventData, setCustomEventData] = useState(jsonData);
 
     const getCategoryIcon = (categoryTitle) => {
         switch (categoryTitle) {
@@ -64,11 +66,12 @@ export const Identifica = () => {
 
     const handleActiveMarker = (marker) => {
         if (marker === activeMarker) {
-            // Si se hace clic en el mismo marcador, oculta la sección superpuesta y la sección debajo del mapa
+            // Si se hace clic en el mismo marcador, oculta la sección superpuesta y la sección de abajo, y muestra la sección de video
             setShowInfo(false);
             setShowBottomSection(false);
+            setActiveMarker(null);
         } else {
-            // Muestra la sección superpuesta y la sección debajo del mapa, y establece el marcador activo
+            // Muestra la sección superpuesta, la sección de abajo, oculta la sección de video y establece el marcador activo
             setShowInfo(true);
             setShowBottomSection(true);
             setActiveMarker(marker);
@@ -106,7 +109,7 @@ export const Identifica = () => {
                 <div className="">
                     {isLoaded ? (
                         <GoogleMap
-                            center={{ lat: -16.35807, lng: -71.65679 }}
+                            center={{ lat: -12.0259475, lng: -77.6110465 }}
                             zoom={10}
                             onClick={() => {
                                 setShowInfo(false);
@@ -137,6 +140,27 @@ export const Identifica = () => {
                                             <div>
                                                 <p>Evento: {event.title}</p>
                                                 <p>Categoría: {event.categories[0].title}</p>
+                                            </div>
+                                        </InfoWindowF>
+                                    ) : null}
+                                </MarkerF>
+                            ))}
+                            {customEventData.map((event) => (
+                                <MarkerF
+                                    key={event.fecha} // Cambia esto a un identificador único si es necesario
+                                    position={{
+                                        lat: event.coordenadas.latitud,
+                                        lng: event.coordenadas.longitud,
+                                    }}
+                                    onClick={() => handleActiveMarker(event)}
+                                    icon={getCategoryIcon(event.tipo)}
+                                >
+                                    {activeMarker === event ? (
+                                        <InfoWindowF onCloseClick={() => handleActiveMarker(null)}>
+                                            <div>
+                                                <p>Fecha: {event.fecha}</p>
+                                                <p>Tipo: {event.tipo}</p>
+                                                {/* Agrega más detalles si es necesario */}
                                             </div>
                                         </InfoWindowF>
                                     ) : null}
