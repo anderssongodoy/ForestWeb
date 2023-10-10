@@ -269,12 +269,12 @@ export const Identifica = () => {
                                 >
                                     {activeMarker === event ? (
                                         <InfoWindowF onCloseClick={() => handleActiveMarker(null)}>
-                                            <div className="bg-red-600 text-white p-2">
+                                            <div className="bg-red-600 text-white p-2 text-center flex flex-col justify-center items-center">
                                                 <p className="font-bold">Fecha: {event.fecha}</p>
                                                 <p className="font-bold">Tipo: {event.tipo}</p>
                                                 <p className="font-bold">Ubicación: {event.ubicacion.departamento}-{event.ubicacion.provincia}-{event.ubicacion.distrito}</p>
                                                 <p className="font-bold">{event.danios}</p>
-                                                <img src={imgmarcador} alt="Imagen del evento" className="w-64" />
+                                                <img src={imgmarcador} alt="Imagen del evento" className="w-64 mt-5" />
                                             </div>
                                         </InfoWindowF>
                                     ) : null}
