@@ -79,9 +79,9 @@ export const Sidebar = () => {
                         <div className="text-center items-center flex justify-center">
                             <FiFigma />
                         </div>
-                        <div className="text-sm">CLICKEA</div>
-                        <div className="text-sm">PARA VER</div>
-                        <div className="text-sm">NUESTRO</div>
+                        <div className="text-sm">CLICK</div>
+                        <div className="text-sm">TO VIEW</div>
+                        <div className="text-sm">OUR</div>
                         <div className="text-sm">FIGMA</div>
                     </div>
                     <div className="text-center cursor-pointer">
