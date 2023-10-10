@@ -22,6 +22,7 @@ export const Map = ({setShowBottomSection}) => {
 
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
+        language: 'en',
     });
 
     const getCategoryIcon = (categoryTitle) => {
