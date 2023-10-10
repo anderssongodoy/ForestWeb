@@ -47,12 +47,14 @@ export const Sidebar = () => {
                         <div className="text-sm">OUR</div>
                         <div className="text-sm">FIGMA</div>
                     </div>
-                    <div className="text-center cursor-pointer">
+                    <Link
+                    to="/"
+                    className="text-center cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <GoAlertFill />
                         </div>
                         <div className="text-sm">Disasters</div>
-                    </div>
+                    </Link>
                     <Link
                         to="/trivia"
                         >
@@ -86,7 +88,9 @@ export const Sidebar = () => {
                         <div className="text-sm">OUR</div>
                         <div className="text-sm">FIGMA</div>
                     </div>
-                    <div className="text-center cursor-pointer">
+                    <Link
+                    to="/"
+                    className="text-center cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <GoAlertFill />
                         </div>
