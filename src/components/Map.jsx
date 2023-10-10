@@ -5,7 +5,7 @@ import imgmarcador from '../assets/img/imgmarcador.png'
 import jsonData from '../fireforestData.json';
 import { useState } from 'react';
 
-export const Map = ({setShowBottomSection}) => {
+export const Map = ({ setShowBottomSection }) => {
 
     const [activeMarker, setActiveMarker] = useState(null);
     const [customEventData] = useState(jsonData);
@@ -35,6 +35,9 @@ export const Map = ({setShowBottomSection}) => {
     return (
         <>
             <div className="">
+                <div className="text-center font-bold p-2 bg-black text-white">
+                    Select a marker
+                </div>
                 {isLoaded ? (
                     <GoogleMap
                         center={{ lat: -12.0265898, lng: -77.1529351 }}
