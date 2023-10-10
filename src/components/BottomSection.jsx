@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import indice from '../assets/img/indicemeteorologico.png';
-import { Chart, CategoryScale, LinearScale, BarController, Title, Tooltip } from 'chart.js/auto';
+import { Chart } from 'chart.js/auto';
 
 export const BottomSection = ({ showBottomSection }) => {
     const [chart, setChart] = useState(null);
@@ -16,7 +16,7 @@ export const BottomSection = ({ showBottomSection }) => {
                 labels: ['2019', '2020', '2021', '2022', '2023'],
                 datasets: [
                     {
-                        label: 'Incendios Forestales',
+                        label: 'Forest Fires',
                         data: [664, 1343, 817, 1432, 591],
                         backgroundColor: 'rgba(75, 192, 192, 0.6)',
                     },
@@ -29,13 +29,13 @@ export const BottomSection = ({ showBottomSection }) => {
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Cantidad de Incendios',
+                            text: 'Number of Fires',
                         },
                     },
                     x: {
                         title: {
                             display: true,
-                            text: 'Año',
+                            text: 'Year',
                         },
                     },
                 },
@@ -64,21 +64,21 @@ export const BottomSection = ({ showBottomSection }) => {
             {showBottomSection && (
                 <div className="p-4 text-white">
                     <div>
-                        <div className="text-center text-2xl">Indice Meteorológico de Incendios (FWI)</div>
+                        <div className="text-center text-2xl">Fire Weather Index (FWI)</div>
                         <img src={indice} alt="asd" className="w-full" />
                     </div>
                     <div className="mt-10">
-                        <div className="text-2xl">¿Sabías Qué?</div>
-                        <div>En lo que va del 2023, los incendios forestales en Perú superan el medio millar. El Instituto Nacional de Defensa Civil (Indeci) ha documentado 591 de estos eventos en el país, entre el 1 de enero y el 28 de agosto de 2023. La mayoría de ellos fueron provocados por acciones humanas.<br />
-                            El reporte presentado por el jefe del Indeci, Carlos Yañez, muestra que Cusco ha sido, hasta el momento, la región en la que se han registrado más incendios forestales con 161 en lo que va del año; seguido por <strong>Áncash (85), Apurimac (56) y Ucayali (55)</strong>. “Los incendios forestales se han registrado en 20 regiones del país”, asegura Yañez.</div>
+                        <div className="text-2xl">Did You Know?</div>
+                        <div>So far in 2023, forest fires in Peru have exceeded five hundred. The National Institute of Civil Defense (Indeci) has documented 591 of these events in the country, between January 1 and August 28, 2023. Most of them were caused by human actions.<br />
+                            The report presented by the head of Indeci, Carlos Yañez, shows that Cusco has been, so far, the region with the most forest fires with 161 this year; followed by <strong>Áncash (85), Apurimac (56), and Ucayali (55)</strong>. "Forest fires have been reported in 20 regions of the country," says Yañez.</div>
                     </div>
                     <div className="mt-5">
-                        <div className="text-2xl">Tenemos que concientizarnos</div>
-                        <div>En los últimos días, se han reportado incendios forestales en Cusco, Apurímac, Huaraz, Arequipa y otras regiones, lo cual ha generado preocupación por las consecuencias que conllevan estos tipos de siniestros. Solo en el distrito de Ihuayllo se conoció que cinco personas fallecieron en esta tragedia.<br />
-                            Una situación que ha dejado a cientos de ciudadanos de la región Apurímac preocupados. Ante ello, Instituto Nacional de Defensa Civil (Indeci) reveló que se han registrado más de 4.400 incendios forestales en los últimos cinco años en el Perú.</div>
+                        <div className="text-2xl">We Need to Raise Awareness</div>
+                        <div>In recent days, forest fires have been reported in Cusco, Apurímac, Huaraz, Arequipa, and other regions, which has raised concerns about the consequences of these types of disasters. In the district of Ihuayllo alone, it was reported that five people died in this tragedy.<br />
+                            A situation that has left hundreds of citizens in the Apurímac region concerned. In response, the National Institute of Civil Defense (Indeci) revealed that more than 4,400 forest fires have been recorded in Peru over the past five years.</div>
                     </div>
                     <div className="mt-10">
-                        <div className="text-2xl">INCENDIOS FORESTALES DE LOS ULTIMOS 5 AÑOS</div>
+                        <div className="text-2xl">FOREST FIRES IN THE LAST 5 YEARS</div>
                         <div>
                             <canvas ref={chartRef} width={400} height={200}></canvas>
                         </div>

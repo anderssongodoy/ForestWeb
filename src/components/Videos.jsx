@@ -24,11 +24,12 @@ export const Videos = () => {
     return (
         <>
             <div className="md:w-1/4 w-full bg-black p-4 text-white md:overflow-y-auto ">
-                <h2 className="text-xl font-bold mb-4">Sección de Videos</h2>
+                <h2 className="text-xl font-bold mb-4 text-center">Find out what is happening</h2>
                 <div className="video-list">
                     {videosData.map((video, index) => (
                         <div className="video-item mb-4" key={index}>
-                            <h3>{video.title}</h3>
+                            <hr/>
+                            <br/>
                             <ReactPlayer
                                 url={video.url}
                                 controls

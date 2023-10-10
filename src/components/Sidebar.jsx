@@ -51,26 +51,26 @@ export const Sidebar = () => {
                         <div className="text-center items-center flex justify-center">
                             <GoAlertFill />
                         </div>
-                        <div className="text-sm">Desastres</div>
+                        <div className="text-sm">Disasters</div>
                     </div>
                     <Link to="/trivia" >
                         <div className="text-center items-center flex justify-center">
                             <AiFillRedditSquare />
                         </div>
-                        <div className="text-sm">Entrenamiento</div>
+                        <div className="text-sm">Training</div>
                     </Link>
                     <div className="cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <BsFire />
                         </div>
-                        <div className="text-sm">Alerta</div>
+                        <div className="text-sm">Alert</div>
                     </div>
-                    <div className="cursor-pointer">
+                    {/* <div className="cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <AiFillAlert />
                         </div>
                         <div className="text-sm">Reporta</div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className={`md:w-1/12 w-full bg-black text-white text-center ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
@@ -88,26 +88,26 @@ export const Sidebar = () => {
                         <div className="text-center items-center flex justify-center">
                             <GoAlertFill />
                         </div>
-                        <div className="text-sm">Desastres</div>
+                        <div className="text-sm">Disasters</div>
                     </div>
                     <Link to="/trivia" >
                         <div className="text-center items-center flex justify-center">
                             <AiFillRedditSquare />
                         </div>
-                        <div className="text-sm">Entrenamiento</div>
+                        <div className="text-sm">Training</div>
                     </Link>
                     <div className="cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <BsFire />
                         </div>
-                        <div className="text-sm">Alerta</div>
+                        <div className="text-sm">Alert</div>
                     </div>
-                    <div className="cursor-pointer">
+                    {/* <div className="cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <AiFillAlert />
                         </div>
                         <div className="text-sm">Reporta</div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

@@ -28,13 +28,7 @@ export const Map = ({setShowBottomSection}) => {
 
     const getCategoryIcon = (categoryTitle) => {
         switch (categoryTitle) {
-            case "Volcanoes":
-                return iconVolcan;
-            case "Floods":
-                return iconInun;
-            case "Wildfires":
-                return iconInce;
-            case "incendio forestal":
+            case "forest fire":
                 return iconInce;
         }
     };
@@ -61,21 +55,21 @@ export const Map = ({setShowBottomSection}) => {
                     >
                         {customEventData.map((event) => (
                             <MarkerF
-                                key={event.fecha}
+                                key={event.date}
                                 position={{
-                                    lat: event.coordenadas.latitud,
-                                    lng: event.coordenadas.longitud,
+                                    lat: event.coordinates.latitude,
+                                    lng: event.coordinates.longitude,
                                 }}
                                 onClick={() => handleActiveMarker(event)}
-                                icon={getCategoryIcon(event.tipo)}
+                                icon={getCategoryIcon(event.type)}
                             >
                                 {activeMarker === event ? (
                                     <InfoWindowF onCloseClick={() => handleActiveMarker(null)}>
                                         <div className="bg-red-600 text-white p-2 text-center flex flex-col justify-center items-center">
-                                            <p className="font-bold">Fecha: {event.fecha}</p>
-                                            <p className="font-bold">Tipo: {event.tipo}</p>
-                                            <p className="font-bold">Ubicación: {event.ubicacion.departamento}-{event.ubicacion.provincia}-{event.ubicacion.distrito}</p>
-                                            <p className="font-bold">{event.danios}</p>
+                                            <p className="font-bold">Fecha: {event.date}</p>
+                                            <p className="font-bold">Tipo: {event.type}</p>
+                                            <p className="font-bold">Ubicación: {event.location.department}-{event.location.province}-{event.location.district}</p>
+                                            <p className="font-bold">{event.damages}</p>
                                             <img src={imgmarcador} alt="Imagen del evento" className="w-64 mt-5" />
                                         </div>
                                     </InfoWindowF>
