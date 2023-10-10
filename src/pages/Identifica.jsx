@@ -177,12 +177,12 @@ export const Identifica = () => {
                         </div>
                         <div className="text-sm">Desastres</div>
                     </div>
-                    <div className="cursor-pointer">
+                    <Link to="/trivia" >
                         <div className="text-center items-center flex justify-center">
                             <AiFillRedditSquare />
                         </div>
                         <div className="text-sm">Entrenamiento</div>
-                    </div>
+                    </Link>
                     <div className="cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <BsFire />
@@ -215,7 +215,7 @@ export const Identifica = () => {
                         </div>
                         <div className="text-sm">Desastres</div>
                     </div>
-                    <Link to="/trivia" className="cursor-pointer">
+                    <Link to="/trivia" >
                         <div className="text-center items-center flex justify-center">
                             <AiFillRedditSquare />
                         </div>
