@@ -38,13 +38,13 @@ export const Sidebar = () => {
             </div>
             <div className="hidden md:w-1/12 md:block bg-black text-white text-center">
                 <div className="text-4xl space-y-5 flex flex-col px-10 justify-center items-center mt-10">
-                    <div className="text-center cursor-pointer" onClick={handleClick}>
+                <div className="text-center cursor-pointer" onClick={handleClick}>
                         <div className="text-center items-center flex justify-center">
                             <FiFigma />
                         </div>
-                        <div className="text-sm">CLICKEA</div>
-                        <div className="text-sm">PARA VER</div>
-                        <div className="text-sm">NUESTRO</div>
+                        <div className="text-sm">CLICK</div>
+                        <div className="text-sm">TO VIEW</div>
+                        <div className="text-sm">OUR</div>
                         <div className="text-sm">FIGMA</div>
                     </div>
                     <div className="text-center cursor-pointer">
