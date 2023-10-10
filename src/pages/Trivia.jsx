@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Sidebar } from '../components';
+import fondo from '../assets/img/fondoTrivia.png'
 
 export const Trivia = () => {
   const questions = [
@@ -76,19 +77,27 @@ export const Trivia = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen">
+    <div
+      className="flex flex-col md:flex-row h-screen"
+    >
       <Sidebar />
-      <div className="flex items-center flex-col justify-center w-full p-4 text-white text-center">
+      <div className="flex items-center flex-col justify-center w-full h-screen p-4 text-white text-center"
+      style={{
+        backgroundImage: `url(${fondo})`, // Aplica la imagen de fondo
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+      }}>
         <div>
-          <h2 className="text-xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4">
             Question {currentQuestionIndex + 1}:
           </h2>
-          <p>{questions[currentQuestionIndex].question}</p>
-          <ul className="mt-4">
+          <p className='text-2xl'>{questions[currentQuestionIndex].question}</p>
+          <ul className="mt-4 text-xl">
             {questions[currentQuestionIndex].options.map((option) => (
               <li
                 key={option}
-                className="cursor-pointer hover:underline"
+                className="cursor-pointer hover:underline px-10 py-3 mt-4 rounded-lg bg-white text-black"
                 onClick={() => handleAnswerClick(option)}
               >
                 {option}
