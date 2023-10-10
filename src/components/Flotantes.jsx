@@ -18,16 +18,16 @@ export const Flotantes = () => {
 
             {showWelcomeBox && (
                 <div className="fixed bottom-4 left-52 bg-message text-white p-4 rounded-lg shadow-lg z-50">
-                    <p>Hola! Mi nombre es Yanapay soy de [tu información]</p>
-                    <p>Acabo de configurar tu idioma por el lugar donde estás. ¿Deseas cambiarlo?</p>
+                    <p>Hello! My name is Yanapay, I'm from [your information].</p>
+                    <p>I just configured your language based on your location. Do you want to change it?</p>
                     <button className="bg-white text-black py-2 px-4 rounded-full mt-2">
-                        Cambiar Idioma
+                        Change Language
                     </button>
                 </div>
             )}
             <Link
-            to="/reporta"
-            className="fixed bottom-4 left-6 z-50">
+                //to="/reporta"
+                className="fixed bottom-4 left-6 z-50">
                 <img src={reporte} alt="Icono" className="w-20 h-50%" />
             </Link>
             <div className="fixed bottom-24 left-10 z-50">

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { BottomSection, Map, Sidebar, Videos } from "../components";
 

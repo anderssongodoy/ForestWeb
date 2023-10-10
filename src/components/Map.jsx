@@ -1,10 +1,8 @@
 import { GoogleMap, InfoWindowF, MarkerF, useLoadScript } from '@react-google-maps/api';
 import { Flotantes } from './Flotantes';
-import iconVolcan from '../assets/img/volcanous.png'
-import iconInun from '../assets/img/floods.png'
 import iconInce from '../assets/img/wildfires.png'
 import imgmarcador from '../assets/img/imgmarcador.png'
-import jsonData from '../datos.json';
+import jsonData from '../fireforestData.json';
 import { useState } from 'react';
 
 export const Map = ({setShowBottomSection}) => {
@@ -66,9 +64,9 @@ export const Map = ({setShowBottomSection}) => {
                                 {activeMarker === event ? (
                                     <InfoWindowF onCloseClick={() => handleActiveMarker(null)}>
                                         <div className="bg-red-600 text-white p-2 text-center flex flex-col justify-center items-center">
-                                            <p className="font-bold">Fecha: {event.date}</p>
-                                            <p className="font-bold">Tipo: {event.type}</p>
-                                            <p className="font-bold">Ubicación: {event.location.department}-{event.location.province}-{event.location.district}</p>
+                                            <p className="font-bold">DATE: {event.date}</p>
+                                            <p className="font-bold">Type: {event.type}</p>
+                                            <p className="font-bold">Location: {event.location.department}-{event.location.province}-{event.location.district}</p>
                                             <p className="font-bold">{event.damages}</p>
                                             <img src={imgmarcador} alt="Imagen del evento" className="w-64 mt-5" />
                                         </div>
