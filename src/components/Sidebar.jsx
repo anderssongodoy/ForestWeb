@@ -4,6 +4,7 @@ import { AiFillRedditSquare, AiFillAlert } from "react-icons/ai"
 import { BsFire } from "react-icons/bs"
 import { FiFigma } from "react-icons/fi"
 import { Link } from 'react-router-dom'
+import logo from '../assets/img/logobar.png'
 
 export const Sidebar = () => {
 
@@ -37,8 +38,13 @@ export const Sidebar = () => {
                 </button>
             </div>
             <div className="hidden md:w-1/12 md:block bg-black text-white text-center">
-                <div className="text-4xl space-y-5 flex flex-col px-10 justify-center items-center mt-10">
-                <div className="text-center cursor-pointer" onClick={handleClick}>
+                <div className="text-4xl space-y-5 flex flex-col px-10 justify-center items-center mt-2">
+                    <div className="cursor-pointer">
+                        <div className="text-center items-center flex justify-center w-12">
+                            <img src={logo} alt="" className='w-full' />
+                        </div>
+                    </div>
+                    <div className="text-center cursor-pointer" onClick={handleClick}>
                         <div className="text-center items-center flex justify-center">
                             <FiFigma />
                         </div>
@@ -48,8 +54,8 @@ export const Sidebar = () => {
                         <div className="text-sm">FIGMA</div>
                     </div>
                     <Link
-                    to="/"
-                    className="text-center cursor-pointer">
+                        to="/"
+                        className="text-center cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <GoAlertFill />
                         </div>
@@ -57,7 +63,7 @@ export const Sidebar = () => {
                     </Link>
                     <Link
                         to="/trivia"
-                        >
+                    >
                         <div className="text-center items-center flex justify-center">
                             <AiFillRedditSquare />
                         </div>
@@ -78,7 +84,12 @@ export const Sidebar = () => {
                 </div>
             </div>
             <div className={`md:w-1/12 w-full bg-black text-white text-center ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-                <div className="text-4xl space-y-5 flex flex-col justify-center items-center mt-10">
+                <div className="text-4xl space-y-5 flex flex-col justify-center items-center">
+                <div className="cursor-pointer">
+                        <div className="text-center items-center flex justify-center w-12">
+                            <img src={logo} alt="" className='w-full' />
+                        </div>
+                    </div>
                     <div className="text-center cursor-pointer" onClick={handleClick}>
                         <div className="text-center items-center flex justify-center">
                             <FiFigma />
@@ -89,15 +100,15 @@ export const Sidebar = () => {
                         <div className="text-sm">FIGMA</div>
                     </div>
                     <Link
-                    to="/"
-                    className="text-center cursor-pointer">
+                        to="/"
+                        className="text-center cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <GoAlertFill />
                         </div>
                         <div className="text-sm">Disasters</div>
                     </Link>
                     <Link
-                    to="/trivia"
+                        to="/trivia"
                     >
                         <div className="text-center items-center flex justify-center">
                             <AiFillRedditSquare />
