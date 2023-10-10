@@ -18,6 +18,7 @@ import indice from '../assets/img/indicemeteorologico.png'
 import logo from '../assets/img/logo.png'
 import reporte from '../assets/img/reporte.png'
 import mensaje from '../assets/img/mensaje.png'
+import imgmarcador from '../assets/img/imgmarcador.png'
 import jsonData from '../datos.json';
 import Chart from 'chart.js/auto';
 import { Link } from "react-router-dom";
@@ -43,7 +44,7 @@ export const Identifica = () => {
     const [showWelcomeBox, setShowWelcomeBox] = useState(false);
     const [language, setLanguage] = useState('default');
     const [chart, setChart] = useState(null);
-    
+
 
     const getCategoryIcon = (categoryTitle) => {
         switch (categoryTitle) {
@@ -114,7 +115,7 @@ export const Identifica = () => {
                     data: data,
                     options: options,
                 });
-                setChart(newChart); // Guarda una referencia al nuevo gráfico
+                setChart(newChart);
             }
         }
     }, [chartRef.current]);
@@ -161,7 +162,7 @@ export const Identifica = () => {
                 </button>
             </div>
             <div className="hidden md:w-1/12 md:block bg-black text-white text-center">
-            <div className="text-4xl space-y-5 flex flex-col justify-center items-center mt-10">
+                <div className="text-4xl space-y-5 flex flex-col px-10 justify-center items-center mt-10">
                     <div className="text-center cursor-pointer" onClick={handleClick}>
                         <div className="text-center items-center flex justify-center">
                             <FiFigma />
@@ -197,7 +198,7 @@ export const Identifica = () => {
                     </div>
                 </div>
             </div>
-            
+
             <div className={`md:w-1/12 w-full bg-black text-white text-center ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
                 <div className="text-4xl space-y-5 flex flex-col justify-center items-center mt-10">
                     <div className="text-center cursor-pointer" onClick={handleClick}>
@@ -268,9 +269,12 @@ export const Identifica = () => {
                                 >
                                     {activeMarker === event ? (
                                         <InfoWindowF onCloseClick={() => handleActiveMarker(null)}>
-                                            <div>
-                                                <p>Fecha: {event.fecha}</p>
-                                                <p>Tipo: {event.tipo}</p>
+                                            <div className="bg-red-600 text-white p-2">
+                                                <p className="font-bold">Fecha: {event.fecha}</p>
+                                                <p className="font-bold">Tipo: {event.tipo}</p>
+                                                <p className="font-bold">Ubicación: {event.ubicacion.departamento}-{event.ubicacion.provincia}-{event.ubicacion.distrito}</p>
+                                                <p className="font-bold">{event.danios}</p>
+                                                <img src={imgmarcador} alt="Imagen del evento" className="w-64" />
                                             </div>
                                         </InfoWindowF>
                                     ) : null}
