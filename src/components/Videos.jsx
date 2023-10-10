@@ -23,7 +23,7 @@ export const Videos = () => {
     }, []);
     return (
         <>
-            <div className="md:w-1/4 w-full bg-black p-4 text-white md:overflow-y-auto ">
+            <div className="md:w-1/4 w-full bg-black p-4 text-white md:overflow-y-auto scrollbar ">
                 <h2 className="text-xl font-bold mb-4 text-center">Find out what is happening</h2>
                 <div className="video-list">
                     {videosData.map((video, index) => (

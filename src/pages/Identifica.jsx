@@ -6,7 +6,7 @@ export const Identifica = () => {
 
 
     return (
-        <div className="flex flex-col md:flex-row h-screen">
+        <div className="flex flex-col md:flex-row h-screen overflow-auto scrollbar">
             <Sidebar/>
             <div className="md:w-3/4 relative w-full">
                 <Map setShowBottomSection={setShowBottomSection}/>

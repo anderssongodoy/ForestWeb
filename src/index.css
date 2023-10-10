@@ -14,3 +14,34 @@ body {
 code {
   font-family: 'Poppins', sans-serif;
 }
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  .scrollbar::-webkit-scrollbar:horizontal {
+    @apply h-2;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-corner {
+    @apply bg-transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-green-300;
+    @apply rounded-full;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-green-500;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:active {
+    @apply bg-green-500
+  }
+}
