@@ -42,7 +42,7 @@ export const Identifica = () => {
     const [showWelcomeBox, setShowWelcomeBox] = useState(false);
     const [language, setLanguage] = useState('default');
     const [chart, setChart] = useState(null);
-
+    
 
     const getCategoryIcon = (categoryTitle) => {
         switch (categoryTitle) {
@@ -196,6 +196,7 @@ export const Identifica = () => {
                     </div>
                 </div>
             </div>
+            
             <div className={`md:w-1/12 w-full bg-black text-white text-center ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
                 <div className="text-4xl space-y-5 flex flex-col justify-center items-center mt-10">
                     <div className="text-center cursor-pointer" onClick={handleClick}>

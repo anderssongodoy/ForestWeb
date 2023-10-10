@@ -1,6 +1,6 @@
 [
     {
-        "fecha": "13 de setiembre de 2023",
+        "fecha": "13-09-2023",
         "hora": "10:00 horas aproximadamente",
         "tipo": "incendio forestal",
         "danios": "daños a la salud de las personas, cobertura natural, terreno agrícola, infraestructura de riego, ganadería y sitio arqueológico de las personas",
@@ -10,57 +10,13 @@
             "distrito": "LARAOS",
             "sinpad": 180001
         },
-        "evaluacion_danos": {
-            "fecha_actualizacion": "14 de setiembre de 2023",
-            "hora_actualizacion": "17:30 horas",
-            "descripcion": "Evaluación de daños diversos",
-            "fuente": "Centro de Operaciones de Emergencia Regional de Lima",
-            "danos": [
-                {
-                    "categoria": "INFRAESTRUCTURA DE RIEGO",
-                    "estado": "HERIDA",
-                    "unidad_medida": "personas",
-                    "cantidad": 2
-                },
-                {
-                    "categoria": "PATRIMONIO CULTURAL",
-                    "estado": "DESTRUIDO",
-                    "unidad_medida": "metros",
-                    "cantidad": 200
-                },
-                {
-                    "categoria": "GANADERÍA",
-                    "estado": "PERDIDA",
-                    "unidad_medida": "Cobertura natural",
-                    "cantidad": 200,
-                    "medida": "hectáreas"
-                },
-                {
-                    "categoria": "COBERTURA NATURAL",
-                    "estado": "DESTRUIDA",
-                    "unidad_medida": "hectáreas",
-                    "cantidad": 35
-                },
-                {
-                    "categoria": "CULTIVOS",
-                    "estado": "PERDIDOS",
-                    "unidad_medida": "hectáreas",
-                    "cantidad": 1
-                },
-                {
-                    "categoria": "SITIO ARQUEOLÓGICO",
-                    "estado": "Dañado",
-                    "nota": "En proceso de actualización en el SINPAD"
-                }
-            ]
-        },
         "coordenadas": {
             "latitud": -12.3505836,
             "longitud": -75.7909637
         }
     },
     {
-        "fecha": "12 de febrero de 2023",
+        "fecha": "12-02-2023",
         "hora": "13:30 horas",
         "tipo": "incendio forestal",
         "danios": "daños a una vivienda, cultivos y cobertura natural",
@@ -71,37 +27,13 @@
             "anexo": "SAN JUAN DE CORREVIENTO",
             "sinpad": 163419
         },
-        "evaluacion_danos": {
-            "fecha_actualizacion": "28 de marzo de 2023",
-            "hora_actualizacion": "12:20 horas",
-            "descripcion": "Evaluación de daños diversos",
-            "danos": [
-                {
-                    "categoria": "DAMNIFICADA VIVIENDA",
-                    "estado": "INHABITABLE",
-                    "unidad_medida": "vivienda",
-                    "cantidad": 2
-                },
-                {
-                    "categoria": "CULTIVO PERDIDO",
-                    "unidad_medida": "hectáreas",
-                    "cantidad": 1
-                },
-                {
-                    "categoria": "CULTIVO AFECTADO",
-                    "unidad_medida": "hectáreas",
-                    "cantidad": 50
-                }
-            ],
-            "fuente": "Centro de Operaciones de Emergencia Regional de Lima"
-        },
         "coordenadas": {
             "latitud": -12.5261924,
             "longitud": -76.5482872
         }
     },
     {
-        "fecha": "5 de octubre de 2023",
+        "fecha": "05-10-2023",
         "hora": "14:00 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural",
@@ -111,14 +43,13 @@
             "distrito": "LIMATAMBO",
             "anexo": "MAMACO"
         },
-        
         "coordenadas": {
             "latitud": -13.4802837,
             "longitud": -72.4452303
         }
     },
     {
-        "fecha": "3 de octubre de 2023",
+        "fecha": "03-10-2023",
         "hora": "00:15 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural, en la Costa Verde",
@@ -128,14 +59,13 @@
             "distrito": "BARRANCO",
             "anexo": ""
         },
-        
         "coordenadas": {
             "latitud": -12.144346,
             "longitud": -77.0404744
         }
     },
     {
-        "fecha": "5 de octubre de 2023",
+        "fecha": "05-10-2023",
         "hora": "12:40 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural en el anexo de Antilla",
@@ -145,14 +75,13 @@
             "distrito": "CURAHUASI",
             "anexo": "ANTILLA"
         },
-        
         "coordenadas": {
             "latitud": -13.5426982,
             "longitud": -72.7137492
         }
     },
     {
-        "fecha": "8 de octubre de 2023",
+        "fecha": "08-10-2023",
         "hora": "10:00 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural en el sector de Huampupampa",
@@ -161,14 +90,13 @@
             "provincia": "PAUCAR DEL SARA SARA",
             "distrito": "SARA SARA"
         },
-        
         "coordenadas": {
             "latitud": -15.2671691,
             "longitud": -73.5063285
         }
     },
     {
-        "fecha": "2 de octubre de 2023",
+        "fecha": "02-10-2023",
         "hora": "17:20   horas",
         "tipo": "incendio forestal",
         "danios": "daños a los cultivos y cobertura natural en el Bosque Real del distrito de Cholón",
@@ -177,14 +105,13 @@
             "provincia": "MARAÑÓN",
             "distrito": "CHOLÓN"
         },
-        
         "coordenadas": {
             "latitud": -8.6466974,
             "longitud": -77.0271932
         }
     },
     {
-        "fecha": "5 de octubre de 2023",
+        "fecha": "05-10-2023",
         "hora": "13:00 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural en el sector de Franco",
@@ -193,14 +120,13 @@
             "provincia": "RODRIGUEZ DE MENDOZA",
             "distrito": "LONGAR"
         },
-        
         "coordenadas": {
             "latitud": -6.3862181,
             "longitud": -77.55072
         }
     },
     {
-        "fecha": "6 de octubre de 2023",
+        "fecha": "06-10-2023",
         "hora": "13:50 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural en el anexo de Chasquipampa",
@@ -209,14 +135,13 @@
             "provincia": "CAYLLOMA",
             "distrito": "CABANACONDE"
         },
-        
         "coordenadas": {
             "latitud": -15.6221689,
             "longitud": -71.9843638
         }
     },
     {
-        "fecha": "7 de octubre de 2023",
+        "fecha": "07-10-2023",
         "hora": "14:30 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural en la localidad Yuracc Cancha",
@@ -225,14 +150,13 @@
             "provincia": "ACOBAMBA",
             "distrito": "CAJA"
         },
-        
         "coordenadas": {
             "latitud": -12.8833326,
             "longitud": -74.4769882
         }
     },
     {
-        "fecha": "6 de octubre de 2023",
+        "fecha": "06-10-2023",
         "hora": "11:00 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural en el sector de Chaupi Ayllu",
@@ -241,14 +165,13 @@
             "provincia": "SANDIA",
             "distrito": "PATAMBUCO"
         },
-        
         "coordenadas": {
             "latitud": -14.3597067,
             "longitud": -69.6226636
         }
     },
     {
-        "fecha": "5 de octubre de 2023",
+        "fecha": "05-10-2023",
         "hora": "14:00 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural en el caserío de Bajo Colorado",
@@ -257,14 +180,13 @@
             "provincia": "MANU",
             "distrito": "MADRE DE DIOS"
         },
-        
         "coordenadas": {
             "latitud": -12.5969815,
             "longitud": -70.1078988
         }
     },
     {
-        "fecha": "23 de setiembre de 2023",
+        "fecha": "23-09-2023",
         "hora": "13:30 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural y cultivos en los caseríos de Cruz de Piedra y Naranjo",
@@ -273,14 +195,13 @@
             "provincia": "HUANCABAMBA",
             "distrito": "SAN MIGUEL DE EL FAIQUE"
         },
-        
         "coordenadas": {
             "latitud": -5.4024537,
             "longitud": -79.6065956
         }
     },
     {
-        "fecha": "17 de setiembre de 2023",
+        "fecha": "17-09-2023",
         "hora": "20:30 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural en el centro poblado de Munichis",
@@ -289,14 +210,13 @@
             "provincia": "ALTO AMAZONAS",
             "distrito": "YURIMAGUAS"
         },
-        
         "coordenadas": {
             "latitud": -5.895236,
             "longitud": -76.137443
         }
     },
     {
-        "fecha": "21 de junio de 2022",
+        "fecha": "21-06-2022",
         "hora": "13:30 horas",
         "tipo": "incendio forestal",
         "danios": "daños a la cobertura natural (carrizales) en el sector Fundo Loreto",
@@ -305,10 +225,12 @@
             "provincia": "ILO",
             "distrito": "EL ALGARROBAL"
         },
-        
         "coordenadas": {
             "latitud": -17.6217311,
             "longitud": -71.2768043
         }
     }
 ]
+
+
+
