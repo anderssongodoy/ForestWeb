@@ -67,12 +67,12 @@ export const BottomSection = ({ showBottomSection }) => {
                 <div className="p-4 text-white">
                     <div>
                         <div>This is a video from our group where we developed a flame sensor that will be placed on each drone</div>
-                    <ReactPlayer
-                                url={videoFire}
-                                controls
-                                width="100%"
-                                height="auto"
-                            />
+                        <ReactPlayer
+                            url={videoFire}
+                            controls
+                            width="100%"
+                            height="auto"
+                        />
                     </div>
                     <div>
                         <div className="text-center text-2xl">Fire Weather Index (FWI)</div>
