@@ -54,7 +54,7 @@ export const Sidebar = () => {
                         <div className="text-sm">Disasters</div>
                     </div>
                     <Link
-                        // to="/trivia"
+                        to="/trivia"
                         >
                         <div className="text-center items-center flex justify-center">
                             <AiFillRedditSquare />
