@@ -20,6 +20,7 @@ import reporte from '../assets/img/reporte.png'
 import mensaje from '../assets/img/mensaje.png'
 import jsonData from '../datos.json';
 import Chart from 'chart.js/auto';
+import { Link } from "react-router-dom";
 
 export const Identifica = () => {
     const { isLoaded } = useLoadScript({
@@ -214,12 +215,12 @@ export const Identifica = () => {
                         </div>
                         <div className="text-sm">Desastres</div>
                     </div>
-                    <div className="cursor-pointer">
+                    <Link to="/trivia" className="cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <AiFillRedditSquare />
                         </div>
                         <div className="text-sm">Entrenamiento</div>
-                    </div>
+                    </Link>
                     <div className="cursor-pointer">
                         <div className="text-center items-center flex justify-center">
                             <BsFire />
@@ -288,9 +289,9 @@ export const Identifica = () => {
                                     </button>
                                 </div>
                             )}
-                            <div className="fixed bottom-4 left-6 z-50">
+                            <Link to="/reporta" className="fixed bottom-4 left-6 z-50">
                                 <img src={reporte} alt="Icono" className="w-20 h-50%" />
-                            </div>
+                            </Link>
                             <div className="fixed bottom-24 left-10 z-50">
                                 <img src={mensaje} alt="Icono" className="w-12 h-50%" />
                             </div>
