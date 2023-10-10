@@ -90,7 +90,9 @@ export const Sidebar = () => {
                         </div>
                         <div className="text-sm">Disasters</div>
                     </div>
-                    <Link to="/trivia" >
+                    <Link
+                    // to="/trivia"
+                    >
                         <div className="text-center items-center flex justify-center">
                             <AiFillRedditSquare />
                         </div>

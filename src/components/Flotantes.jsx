@@ -25,7 +25,9 @@ export const Flotantes = () => {
                     </button>
                 </div>
             )}
-            <Link to="/reporta" className="fixed bottom-4 left-6 z-50">
+            <Link
+            // to="/reporta"
+            className="fixed bottom-4 left-6 z-50">
                 <img src={reporte} alt="Icono" className="w-20 h-50%" />
             </Link>
             <div className="fixed bottom-24 left-10 z-50">
