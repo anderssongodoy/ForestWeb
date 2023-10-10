@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import indice from '../assets/img/indicemeteorologico.png';
 import { Chart } from 'chart.js/auto';
+import videoFire from '../assets/video/FireDetection.mp4'
+import ReactPlayer from "react-player";
 
 export const BottomSection = ({ showBottomSection }) => {
     const [chart, setChart] = useState(null);
@@ -63,6 +65,15 @@ export const BottomSection = ({ showBottomSection }) => {
         <>
             {showBottomSection && (
                 <div className="p-4 text-white">
+                    <div>
+                        <div>This is a video from our group where we developed a flame sensor that will be placed on each drone</div>
+                    <ReactPlayer
+                                url={videoFire}
+                                controls
+                                width="100%"
+                                height="auto"
+                            />
+                    </div>
                     <div>
                         <div className="text-center text-2xl">Fire Weather Index (FWI)</div>
                         <img src={indice} alt="asd" className="w-full" />
