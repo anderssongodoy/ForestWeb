@@ -78,7 +78,7 @@ export const Sidebar = () => {
                 </div>
             </div>
             <div className={`md:w-1/12 w-full bg-black text-white text-center ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-                <div className="text-4xl space-y-5 flex flex-col justify-center items-center mt-10">
+                <d className="text-4xl space-y-5 flex flex-col justify-center items-center mt-10">
                     <div className="text-center cursor-pointer" onClick={handleClick}>
                         <div className="text-center items-center flex justify-center">
                             <FiFigma />
@@ -95,7 +95,7 @@ export const Sidebar = () => {
                             <GoAlertFill />
                         </div>
                         <div className="text-sm">Disasters</div>
-                    </div>
+                    </Link>
                     <Link
                     to="/trivia"
                     >
