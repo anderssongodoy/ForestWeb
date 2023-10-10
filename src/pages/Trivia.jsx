@@ -71,8 +71,7 @@ export const Trivia = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      // Has completado la trivia, puedes mostrar un mensaje de resultado aquí.
-      setTriviaCompleted(true); // Establece el estado para mostrar el mensaje de finalización
+      setTriviaCompleted(true);
     }
   };
 
@@ -83,7 +82,7 @@ export const Trivia = () => {
       <Sidebar />
       <div className="flex items-center flex-col justify-center w-full h-screen p-4 text-white text-center"
       style={{
-        backgroundImage: `url(${fondo})`, // Aplica la imagen de fondo
+        backgroundImage: `url(${fondo})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -105,11 +104,10 @@ export const Trivia = () => {
             ))}
           </ul>
         </div>
-        {triviaCompleted && ( // Muestra el mensaje de finalización si triviaCompleted es verdadero
+        {triviaCompleted && (
           <div className="text-white mt-20">
-            <h2 className="text-xl font-bold">Trivia completed</h2>
-            <p>Final score: {score} points</p>
-            {/* Puedes mostrar un mensaje de agradecimiento o compartir el resultado */}
+            <h2 className="text-4xl font-bold">Trivia completed</h2>
+            <p className='text-xl'>Final score: {score} points</p>
           </div>
         )}
       </div>
