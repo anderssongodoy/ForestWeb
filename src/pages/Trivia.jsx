@@ -81,12 +81,12 @@ export const Trivia = () => {
     >
       <Sidebar />
       <div className="flex items-center flex-col justify-center w-full h-screen p-4 text-white text-center"
-      style={{
-        backgroundImage: `url(${fondo})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-      }}>
+        style={{
+          backgroundImage: `url(${fondo})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+        }}>
         <div>
           <h2 className="text-4xl font-bold mb-4">
             Question {currentQuestionIndex + 1}:
