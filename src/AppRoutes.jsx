@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { Citizien, Identifica, Reporta, Specialist, Trivia } from "./pages"
+import { Citizien, Identifica, Report, Reporta, Specialist, Trivia } from "./pages"
 
 export const AppRoutes = () => {
   return (
@@ -9,6 +9,7 @@ export const AppRoutes = () => {
         <Route path="trivia" element={<Trivia />} />
         <Route path="citizien" element={<Citizien />} />
         <Route path="specialist" element={<Specialist />} />
+        <Route path="report" element={<Report />} />
     </Routes>
   )
 }

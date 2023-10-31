@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { GoAlertFill } from "react-icons/go"
-import { AiFillRedditSquare, AiFillAlert } from "react-icons/ai"
+import { AiFillRedditSquare } from "react-icons/ai"
 import { BsFire } from "react-icons/bs"
 import { FiFigma } from "react-icons/fi"
 import { Link } from 'react-router-dom'
