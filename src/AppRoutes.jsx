@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { Citizien, Identifica, Report, Reporta, Specialist, Trivia } from "./pages"
+import { Citizien, Identifica, Report, Reporta, Specialist, Trivia, Video } from "./pages"
 
 export const AppRoutes = () => {
   return (
@@ -10,6 +10,7 @@ export const AppRoutes = () => {
         <Route path="citizien" element={<Citizien />} />
         <Route path="specialist" element={<Specialist />} />
         <Route path="report" element={<Report />} />
+        <Route path="video" element={<Video />} /> 
     </Routes>
   )
 }

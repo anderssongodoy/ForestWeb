@@ -3,6 +3,7 @@ import { GoAlertFill } from "react-icons/go"
 import { AiFillRedditSquare } from "react-icons/ai"
 import { BsFire } from "react-icons/bs"
 import { FiFigma } from "react-icons/fi"
+import { RiVideoFill } from "react-icons/ri"
 import { Link } from 'react-router-dom'
 import logo from '../assets/img/logobar.png'
 
@@ -48,11 +49,19 @@ export const Sidebar = () => {
                         <div className="text-center items-center flex justify-center">
                             <FiFigma />
                         </div>
-                        <div className="text-sm">CLICK</div>
+                        {/* <div className="text-sm">CLICK</div>
                         <div className="text-sm">TO VIEW</div>
-                        <div className="text-sm">OUR</div>
+                        <div className="text-sm">OUR</div> */}
                         <div className="text-sm">FIGMA</div>
                     </div>
+                    <Link
+                        to="/video"
+                        className="text-center cursor-pointer">
+                        <div className="text-center items-center flex justify-center">
+                            <RiVideoFill />
+                        </div>
+                        <div className="text-sm">Intro</div>
+                    </Link>
                     <Link
                         to="/"
                         className="text-center cursor-pointer">
@@ -94,11 +103,19 @@ export const Sidebar = () => {
                         <div className="text-center items-center flex justify-center">
                             <FiFigma />
                         </div>
-                        <div className="text-sm">CLICK</div>
+                        {/* <div className="text-sm">CLICK</div>
                         <div className="text-sm">TO VIEW</div>
-                        <div className="text-sm">OUR</div>
+                        <div className="text-sm">OUR</div> */}
                         <div className="text-sm">FIGMA</div>
                     </div>
+                    <Link
+                        to="/video"
+                        className="text-center cursor-pointer">
+                        <div className="text-center items-center flex justify-center">
+                            <RiVideoFill />
+                        </div>
+                        <div className="text-sm">Intro</div>
+                    </Link>
                     <Link
                         to="/"
                         className="text-center cursor-pointer">
